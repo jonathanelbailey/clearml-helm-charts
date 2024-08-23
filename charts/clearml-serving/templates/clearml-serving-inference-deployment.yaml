@@ -49,14 +49,14 @@ spec:
         - envFrom:
           - secretRef:
               name: {{ .Values.clearml.apiSecretName }}
-        {{- endif }}
+        {{- end }}
         - env:
             {{- if not .Values.clearml.apiSecretName }}
             - name: CLEARML_API_ACCESS_KEY
               value: "{{ .Values.clearml.apiAccessKey }}"
             - name: CLEARML_API_SECRET_KEY
               value: "{{ .Values.clearml.apiSecretKey }}"
-            {{- endif }}
+            {{- end }}
             - name: CLEARML_API_HOST
               value: "{{ .Values.clearml.apiHost }}"
             - name: CLEARML_FILES_HOST
