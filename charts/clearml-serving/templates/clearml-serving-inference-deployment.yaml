@@ -50,7 +50,7 @@ spec:
           - secretRef:
               name: {{ .Values.clearml.apiSecretName }}
         {{- end }}
-        - env:
+          env:
             {{- if not .Values.clearml.apiSecretName }}
             - name: CLEARML_API_ACCESS_KEY
               value: "{{ .Values.clearml.apiAccessKey }}"
